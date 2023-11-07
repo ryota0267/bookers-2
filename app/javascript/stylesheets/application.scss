@@ -1,0 +1,17 @@
+@use '~bootstrap/scss/bootstrap';
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.update-button {
+  display: block;
+  margin: 10px 0 10px ;
+}
+
+.wide-text-area {
+  width: 33%;
+}
