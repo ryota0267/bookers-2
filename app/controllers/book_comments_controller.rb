@@ -13,6 +13,12 @@ class BookCommentsController < ApplicationController
     redirect_to book_path(params[:book_id])
   end
 
+  def show
+    @book_comment = BookComment.find(params[:id])
+    @user = @book_comment.user
+    @book_create = Book.new
+  end
+
   private
 
   def book_comment_params

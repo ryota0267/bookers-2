@@ -3,7 +3,6 @@
     <div class="col-md-3">
     <%= render 'errors', book: @book %>
     <%= render 'users/userinfo', user: @book.user %>
-    <h2 class="mt-3">New book</h2>
     <%= render 'newbook', book: @book_create %>
     </div>
     <div class="col-md-8 offset-md-1">
@@ -43,7 +42,10 @@
         <td>
           <%= image_tag book_comment.user.get_profile_image("100x100") %><br><%= book_comment.user.name %>
         </td>
-          <td><%= book_comment.comment %></td>
+          <td><%= link_to book_book_comment_path(book_comment.id) do %>
+              <%= book_comment.comment %>
+            <% end %>
+          </td>
           <td>
             <% if book_comment.user == current_user %>
               <%= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete %>

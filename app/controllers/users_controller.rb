@@ -23,8 +23,8 @@ class UsersController < ApplicationController
     unless user.id == current_user.id
       redirect_to 'users/sign'
     end
-    @user = User.find(params[:id])
-    if @user.update(user_params)
+    user = User.find(params[:id])
+    if user.update(user_params)
       flash[:notice] = "You have updated user successfully."
       redirect_to user_path(@user.id)
     else
